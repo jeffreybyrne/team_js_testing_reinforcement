@@ -8,9 +8,9 @@ test('can create a new team with no params', () => {
         points: 0
     };
     expect(expectedTeam).toEqual(newTeam);
-})
+});
 
-test('provided a name creates a team with that name', () => {
+test('providing a name creates a team with that name', () => {
     let newTeam = teamObj('Maple Leafs');
     const expectedTeam = {
         teamName: 'Maple Leafs',
@@ -18,4 +18,14 @@ test('provided a name creates a team with that name', () => {
         points: 0
     };
     expect(expectedTeam).toEqual(newTeam);
-})
+});
+
+test('providing only one param uses that as a name', () => {
+    let newTeam = teamObj(level=5);
+    const expectedTeam = {
+        teamName: 5,
+        level: undefined,
+        points: 0
+    };
+    expect(expectedTeam).toEqual(newTeam);
+});
