@@ -29,3 +29,13 @@ test('providing only one param uses that as a name', () => {
     };
     expect(expectedTeam).toEqual(newTeam);
 });
+
+test('providing both a name and a level uses both in the creation', () => {
+    let newTeam = teamObj('Maple Leafs', 9000);
+    const expectedTeam = {
+        teamName: 'Maple Leafs',
+        level: 9000,
+        points: 0
+    };
+    expect(expectedTeam).toEqual(newTeam);
+});
