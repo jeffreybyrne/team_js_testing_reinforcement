@@ -1,11 +1,21 @@
 const teamObj = require('./team.js');
 
 test('can create a new team with no params', () => {
-    newTeam = teamObj();
+    let newTeam = teamObj();
     const expectedTeam = {
         teamName: undefined,
         level: undefined,
         points: 0
-    }
-    expect(expectedTeam).toEqual(newTeam)
+    };
+    expect(expectedTeam).toEqual(newTeam);
+})
+
+test('provided a name creates a team with that name', () => {
+    let newTeam = teamObj('Maple Leafs');
+    const expectedTeam = {
+        teamName: 'Maple Leafs',
+        level: undefined,
+        points: 0
+    };
+    expect(expectedTeam).toEqual(newTeam);
 })
